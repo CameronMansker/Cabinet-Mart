@@ -22,8 +22,9 @@ import {
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Print, ZoomIn, ZoomOut, Printer } from 'lucide-react';
+import { ZoomIn, ZoomOut, Printer, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useToast } from "@/components/ui/use-toast";
+import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog";
 
 const Catalog = () => {
   const { toast } = useToast();
@@ -43,6 +44,10 @@ const Catalog = () => {
 
   // State for zoom level
   const [zoomLevel, setZoomLevel] = useState(1);
+  
+  // Lightbox states
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
   
   // Catalog images array (0001.png through 0012.png)
   const catalogImages = Array.from({ length: 12 }, (_, i) => ({
@@ -135,6 +140,42 @@ const Catalog = () => {
     });
   };
 
+  // Lightbox navigation functions
+  const openLightbox = (index: number) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+  };
+
+  const goToNextImage = () => {
+    setLightboxIndex((prev) => (prev + 1) % catalogImages.length);
+  };
+
+  const goToPrevImage = () => {
+    setLightboxIndex((prev) => (prev - 1 + catalogImages.length) % catalogImages.length);
+  };
+
+  // Handle keyboard navigation in lightbox
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!lightboxOpen) return;
+      
+      if (e.key === 'Escape') {
+        closeLightbox();
+      } else if (e.key === 'ArrowRight') {
+        goToNextImage();
+      } else if (e.key === 'ArrowLeft') {
+        goToPrevImage();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [lightboxOpen]);
+
   return (
     <div className="min-h-screen bg-background" ref={catalogRef}>
       <NavigationMenu />
@@ -174,24 +215,20 @@ const Catalog = () => {
         </div>
       </div>
       
-      {/* Grid View */}
+      {/* Responsive Photo Grid */}
       {viewType === 'grid' && (
         <section className="py-12 md:py-16 print:py-6">
           <div className="container px-4 md:px-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
               {catalogImages.map((image, index) => (
                 <div 
                   key={image.id} 
                   className="overflow-hidden rounded-lg border shadow-sm bg-card hover:shadow-md transition-shadow duration-300 group"
                 >
                   <button 
-                    onClick={() => {
-                      setViewType('fullpage');
-                      setCurrentPage(image.id);
-                      resetZoom();
-                    }}
+                    onClick={() => openLightbox(index)}
                     className="w-full"
-                    aria-label={`View catalog page ${image.id}`}
+                    aria-label={`View ${image.alt} in fullscreen mode`}
                   >
                     <div className="relative aspect-[2587/3337] w-full overflow-hidden">
                       {isLoading[index] && (
@@ -374,34 +411,87 @@ const Catalog = () => {
         </div>
       )}
       
+      {/* Lightbox Dialog */}
+      <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
+        <DialogContent className="max-w-7xl w-full h-[90vh] p-0 overflow-hidden bg-black/95 border-none" onPointerDownOutside={(e) => e.preventDefault()}>
+          <div className="relative w-full h-full flex items-center justify-center">
+            {/* Close button */}
+            <DialogClose className="absolute right-4 top-4 z-50 bg-black/50 hover:bg-black/80 rounded-full p-2 text-white">
+              <X className="h-6 w-6" />
+              <span className="sr-only">Close</span>
+            </DialogClose>
+            
+            {/* Previous image button */}
+            <button 
+              onClick={(e) => {
+                e.stopPropagation();
+                goToPrevImage();
+              }}
+              className="absolute left-4 z-50 bg-black/50 hover:bg-black/80 rounded-full p-3 text-white transition-all"
+              aria-label="Previous image"
+            >
+              <ChevronLeft className="h-8 w-8" />
+            </button>
+            
+            {/* Image container */}
+            <div className="w-full h-full flex items-center justify-center p-4 md:p-8">
+              <img 
+                src={catalogImages[lightboxIndex].src} 
+                alt={catalogImages[lightboxIndex].alt}
+                className="max-w-full max-h-full object-contain select-none"
+              />
+            </div>
+            
+            {/* Next image button */}
+            <button 
+              onClick={(e) => {
+                e.stopPropagation();
+                goToNextImage();
+              }}
+              className="absolute right-4 z-50 bg-black/50 hover:bg-black/80 rounded-full p-3 text-white transition-all"
+              aria-label="Next image"
+            >
+              <ChevronRight className="h-8 w-8" />
+            </button>
+            
+            {/* Image counter */}
+            <div className="absolute bottom-4 left-0 right-0 text-center text-white/90">
+              <p>Page {lightboxIndex + 1} of {totalPages}</p>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
+      
       {/* Print-specific styles */}
-      <style jsx global>{`
-        @media print {
-          nav, footer, .print\\:hidden {
-            display: none !important;
+      <style global>
+        {`
+          @media print {
+            nav, footer, .print\\:hidden {
+              display: none !important;
+            }
+            body {
+              background: white;
+            }
+            .print\\:block {
+              display: block !important;
+            }
+            .print\\:py-4 {
+              padding-top: 1rem !important;
+              padding-bottom: 1rem !important;
+            }
+            .print\\:py-6 {
+              padding-top: 1.5rem !important;
+              padding-bottom: 1.5rem !important;
+            }
+            .print\\:pt-8 {
+              padding-top: 2rem !important;
+            }
+            .print\\:pb-4 {
+              padding-bottom: 1rem !important;
+            }
           }
-          body {
-            background: white;
-          }
-          .print\\:block {
-            display: block !important;
-          }
-          .print\\:py-4 {
-            padding-top: 1rem !important;
-            padding-bottom: 1rem !important;
-          }
-          .print\\:py-6 {
-            padding-top: 1.5rem !important;
-            padding-bottom: 1.5rem !important;
-          }
-          .print\\:pt-8 {
-            padding-top: 2rem !important;
-          }
-          .print\\:pb-4 {
-            padding-bottom: 1rem !important;
-          }
-        }
-      `}</style>
+        `}
+      </style>
       
       <Footer />
     </div>
