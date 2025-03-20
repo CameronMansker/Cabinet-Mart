@@ -30,12 +30,12 @@ const Hero = () => {
                 <path d="M2 23L16 30L30 23L16 16L2 23Z" fill="white"/>
               </svg>
             </div>
-            <h1 className="text-3xl md:text-5xl font-serif tracking-tight">
+            <h1 className="text-4xl md:text-6xl font-serif tracking-tight">
               Cabinet Mart
             </h1>
           </div>
           
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-light italic mb-3 tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-light italic mb-3 tracking-tight">
             By Cabinet People <br />For Cabinet People.
           </h2>
           
