@@ -96,102 +96,72 @@ const Catalog = () => {
         </div>
       </div>
       
-      {/* Product Catalog - Updated to match reference image style */}
-      <section className="py-12 md:py-16 bg-white">
-        <div className="container px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {catalogImages.map((image, index) => (
-              <div key={image.id} className="flex justify-center">
-                <button 
-                  onClick={() => openLightbox(index)}
-                  className="w-full max-w-md border border-gray-200 rounded shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300"
-                  aria-label={`View ${image.alt} in fullscreen mode`}
-                >
-                  <div className="relative aspect-[2587/3337] w-full overflow-hidden bg-white">
-                    {isLoading[index] && (
-                      <div className="absolute inset-0 flex items-center justify-center bg-muted">
-                        <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
-                      </div>
-                    )}
-                    <img 
-                      src={image.src} 
-                      alt={image.alt}
-                      className="object-contain w-full h-full"
-                      loading={index < 4 ? "eager" : "lazy"}
-                      onLoad={() => handleImageLoad(index)}
-                    />
-                  </div>
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      
-      {/* Lightbox Dialog - Updated to match reference image style */}
-      <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
-        <DialogContent className="max-w-5xl w-full p-0 overflow-hidden bg-white border border-gray-200 rounded-md shadow-xl" 
-                      onPointerDownOutside={(e) => e.preventDefault()}>
-          <div className="relative w-full h-[calc(100vh-100px)] flex items-center justify-center">
-            {/* Close button */}
-            <Button 
-              variant="ghost" 
-              size="icon" 
-              className="absolute right-4 top-4 z-50 rounded-full bg-white/80 hover:bg-white" 
-              onClick={closeLightbox}
-            >
-              <X className="h-6 w-6" />
-              <span className="sr-only">Close</span>
-            </Button>
-            
-            {/* Previous image button */}
-            <div className="absolute left-4 z-50">
-              <Button
-                variant="outline"
-                size="icon"
-                className="rounded-full bg-white/80 hover:bg-white border border-gray-200"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  goToPrevImage();
-                }}
-                aria-label="Previous image"
-              >
-                <ChevronLeft className="h-6 w-6" />
-              </Button>
-            </div>
-            
-            {/* Image container */}
-            <div className="w-full h-full flex items-center justify-center p-4 md:p-8 overflow-auto">
-              <img 
-                src={catalogImages[lightboxIndex].src} 
-                alt={catalogImages[lightboxIndex].alt}
-                className="max-w-full max-h-full object-contain select-none"
-              />
-            </div>
-            
-            {/* Next image button */}
-            <div className="absolute right-4 z-50">
-              <Button
-                variant="outline"
-                size="icon"
-                className="rounded-full bg-white/80 hover:bg-white border border-gray-200"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  goToNextImage();
-                }}
-                aria-label="Next image"
-              >
-                <ChevronRight className="h-6 w-6" />
-              </Button>
-            </div>
-            
-            {/* Page number indicator */}
-            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/80 px-3 py-1 rounded-full text-sm font-medium">
-              {lightboxIndex + 1} / {catalogImages.length}
-            </div>
-          </div>
-        </DialogContent>
-      </Dialog>
+       {/* Lightbox Dialog - Updated to match reference image style */}
+<Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
+  <DialogContent className="max-w-5xl w-full p-0 overflow-hidden bg-white border border-gray-200 rounded-md shadow-xl"
+    // Remove or adjust this line if needed
+    // onPointerDownOutside={(e) => e.preventDefault()}
+  >
+    <div className="relative w-full h-[calc(100vh-100px)] flex items-center justify-center">
+      {/* Close button */}
+      <Button
+        variant="ghost"
+        size="icon"
+        className="absolute right-4 top-4 z-50 rounded-full bg-white/80 hover:bg-white"
+        onClick={closeLightbox}
+      >
+        <X className="h-6 w-6" />
+        <span className="sr-only">Close</span>
+      </Button>
+
+      {/* Previous image button */}
+      <div className="absolute left-4 z-50">
+        <Button
+          variant="outline"
+          size="icon"
+          className="rounded-full bg-white/80 hover:bg-white border border-gray-200"
+          onClick={(e) => {
+            e.stopPropagation();
+            goToPrevImage();
+          }}
+          aria-label="Previous image"
+        >
+          <ChevronLeft className="h-6 w-6" />
+        </Button>
+      </div>
+
+      {/* Image container */}
+      <div className="w-full h-full flex items-center justify-center p-4 md:p-8 overflow-auto">
+        <img
+          src={catalogImages[lightboxIndex].src}
+          alt={catalogImages[lightboxIndex].alt}
+          className="max-w-full max-h-full object-contain select-none"
+        />
+      </div>
+
+      {/* Next image button */}
+      <div className="absolute right-4 z-50">
+        <Button
+          variant="outline"
+          size="icon"
+          className="rounded-full bg-white/80 hover:bg-white border border-gray-200"
+          onClick={(e) => {
+            e.stopPropagation();
+            goToNextImage();
+          }}
+          aria-label="Next image"
+        >
+          <ChevronRight className="h-6 w-6" />
+        </Button>
+      </div>
+
+      {/* Page number indicator */}
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/80 px-3 py-1 rounded-full text-sm font-medium">
+        {lightboxIndex + 1} / {catalogImages.length}
+      </div>
+    </div>
+  </DialogContent>
+</Dialog>
       
       <Footer />
     </div>
