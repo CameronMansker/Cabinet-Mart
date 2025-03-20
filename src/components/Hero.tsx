@@ -31,7 +31,7 @@ const Hero = () => {
               </svg>
             </div>
             <h1 className="text-3xl md:text-5xl font-serif tracking-tight">
-              fabuwood
+              Cabinet Mart
             </h1>
           </div>
           
@@ -41,22 +41,24 @@ const Hero = () => {
           
           <p className="text-sm text-white/80 mb-8">
             Trusted by the nation's best kitchen designers, contractors, and renovators.
+            <br />
+            Custom finishing and staining services for all wood accessories.
           </p>
           
           <div className="flex flex-wrap gap-4">
-            <a href="#find-dealer" className="flex items-center gap-2 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-6 py-2 transition-all duration-300">
+            <a href="/contact" className="flex items-center gap-2 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-6 py-2 transition-all duration-300">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                 <circle cx="12" cy="10" r="3"></circle>
               </svg>
-              Find a Dealer
+              Contact Us
             </a>
-            <a href="#find-showroom" className="flex items-center gap-2 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-6 py-2 transition-all duration-300">
+            <a href="/products" className="flex items-center gap-2 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-6 py-2 transition-all duration-300">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                 <polyline points="9 22 9 12 15 12 15 22"></polyline>
               </svg>
-              Visit a Showroom
+              See All Products
             </a>
           </div>
         </div>
