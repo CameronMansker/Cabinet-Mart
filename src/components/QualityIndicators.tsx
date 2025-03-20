@@ -17,19 +17,19 @@ const QualityIndicators = () => {
       id: "Q1",
       title: "Elegant Solid Wood",
       subtitle: "",
-      imageSrc: "/lovable-uploads/e796548d-135b-4831-897d-5e05858ddba9.png"
+      imageSrc: "/lovable-uploads/wood-samples.jpg"
     },
     {
       id: "Q2",
       title: "Premium Finishes",
       subtitle: "",
-      imageSrc: "/lovable-uploads/e796548d-135b-4831-897d-5e05858ddba9.png"
+      imageSrc: "/lovable-uploads/wood-grain.jpg"
     },
     {
       id: "Q3",
       title: "A+ Quality",
       subtitle: "",
-      imageSrc: "/lovable-uploads/e796548d-135b-4831-897d-5e05858ddba9.png"
+      imageSrc: "/lovable-uploads/wood-samples.jpg"
     }
   ];
 
@@ -61,9 +61,9 @@ const QualityIndicators = () => {
     <section ref={sectionRef} className="py-20 md:py-28 bg-white">
       <div className="container px-4 md:px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl mb-4 italic">A dozen ways we outperform.</h2>
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl mb-4 italic">Providing the final touch to home furniture design. .</h2>
           <p className="text-muted-foreground text-balance">
-            Our design-first focus means that your vision becomes reality. We prioritize quality materials, construction, and exceptional service to deliver kitchens that last.
+            Our design-first focus means that your vision becomes reality. We prioritize quality materials, master craftsmenship, and exceptional service to deliver home furniture that last.
           </p>
         </div>
 
