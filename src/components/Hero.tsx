@@ -15,7 +15,7 @@ const Hero = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center animate-image-zoom"
         style={{ 
-          backgroundImage: 'url(/lovable-uploads/e796548d-135b-4831-897d-5e05858ddba9.png)',
+          backgroundImage: 'url(/lovable-uploads/maybe-hero2.jpg)',
           opacity: loaded ? 1 : 0,
           transition: 'opacity 0.8s ease-in'
         }}
