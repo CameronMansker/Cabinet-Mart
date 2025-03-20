@@ -36,7 +36,7 @@ const Hero = () => {
           </div>
           
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-light italic mb-3 tracking-tight">
-            America's most desired <br />kitchens.
+            By Cabinet People <br />For Cabinet People.
           </h2>
           
           <p className="text-sm text-white/80 mb-8">
