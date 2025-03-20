@@ -2,6 +2,7 @@
 import { useEffect } from 'react';
 import NavigationMenu from '@/components/NavigationMenu';
 import Hero from '@/components/Hero';
+import IntroSection from '@/components/IntroSection';
 import FeatureSection from '@/components/FeatureSection';
 import QualityIndicators from '@/components/QualityIndicators';
 import Footer from '@/components/Footer';
@@ -90,6 +91,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <NavigationMenu />
       <Hero />
+      <IntroSection />
       
       {featureSections.map((section, index) => (
         <FeatureSection

@@ -62,17 +62,12 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({
       <div className="container px-4 md:px-6">
         <div className={cn(
           "grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center",
-          reverse ? "md:flex-row-reverse" : ""
         )}>
           <div 
             className={cn(
               "transition-all duration-700 delay-200",
-              isVisible 
-                ? "opacity-100" 
-                : "opacity-0",
-              reverse 
-                ? "md:translate-x-0" 
-                : "md:translate-x-0"
+              isVisible ? "opacity-100" : "opacity-0",
+              reverse ? "md:order-last" : "md:order-first"
             )}
           >
             <h2 className="section-title">{title}</h2>
@@ -83,12 +78,8 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({
           <div 
             className={cn(
               "image-container transition-all duration-700",
-              isVisible 
-                ? "opacity-100" 
-                : "opacity-0",
-              reverse 
-                ? "md:translate-x-0" 
-                : "md:translate-x-0"
+              isVisible ? "opacity-100" : "opacity-0",
+              reverse ? "md:order-first" : "md:order-last"
             )}
           >
             <img 
