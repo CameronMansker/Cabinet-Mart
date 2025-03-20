@@ -55,11 +55,11 @@
 
 @layer components {
   .copper-btn {
-    @apply bg-copper hover:bg-copper-dark text-white px-6 py-2 transition-all duration-300 inline-block;
+    @apply bg-copper hover:bg-copper-dark text-white px-6 py-3 rounded-sm text-sm font-medium transition-all duration-300 inline-block;
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl font-serif font-medium mb-3;
+    @apply text-3xl md:text-4xl font-serif font-medium mb-3 leading-tight;
   }
   
   .section-subtitle {

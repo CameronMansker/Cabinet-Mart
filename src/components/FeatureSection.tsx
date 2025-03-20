@@ -66,7 +66,7 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({
         )}>
           <div 
             className={cn(
-              "transition-all duration-700 delay-200",
+              "transition-all duration-700 delay-200 flex flex-col items-start justify-center",
               isVisible 
                 ? "opacity-100" 
                 : "opacity-0",
@@ -75,9 +75,14 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({
                 : "md:translate-x-0"
             )}
           >
-            <h2 className="section-title">{title}</h2>
-            <p className="section-subtitle">{subtitle}</p>
-            <a href={buttonLink} className="copper-btn">{buttonText}</a>
+            <h2 className="section-title text-[32px] md:text-[40px] leading-tight mb-2">{title}</h2>
+            <p className="text-muted-foreground text-base mb-6">{subtitle}</p>
+            <a 
+              href={buttonLink} 
+              className="bg-copper hover:bg-copper-dark text-white px-6 py-3 rounded-sm transition-all duration-300 text-sm font-medium"
+            >
+              {buttonText}
+            </a>
           </div>
           
           <div 
@@ -92,9 +97,9 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({
             )}
           >
             <img 
-              src={imageSrc} 
+              src={imageSrc || "/lovable-uploads/ae19e0c4-0c82-4aa7-a5f6-8966f31df53f.png"} 
               alt={imageAlt} 
-              className="w-full h-auto object-cover rounded-sm"
+              className="w-full h-auto object-cover"
               loading="lazy"
             />
           </div>
