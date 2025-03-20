@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import NavigationMenu from '@/components/NavigationMenu';
 import Footer from '@/components/Footer';
@@ -36,26 +35,26 @@ const About = () => {
     {
       name: "Robert Wood",
       role: "Founder & Master Craftsman",
-      bio: "With over 30 years of experience in woodworking, Robert founded Fabuwood with a vision to create timeless, handcrafted cabinetry that transforms spaces into works of art.",
-      image: "/lovable-uploads/e796548d-135b-4831-897d-5e05858ddba9.png"
+      bio: "With over 30 years of experience in woodworking, Robert founded Cabinet Mart with a vision to create timeless, handcrafted cabinetry that transforms spaces into works of art.",
+      image: "/lovable-uploads/example-person.jpeg"
     },
     {
       name: "Sarah Chen",
       role: "Lead Designer",
       bio: "Sarah brings 15 years of interior design expertise to our team, helping clients reimagine their spaces with functional yet elegant cabinet solutions.",
-      image: "/lovable-uploads/e796548d-135b-4831-897d-5e05858ddba9.png"
+      image: "/lovable-uploads/example-person.jpeg"
     },
     {
       name: "Michael Torres",
       role: "Production Manager",
       bio: "Michael oversees our workshop operations, ensuring each piece meets our rigorous quality standards while maintaining efficient production timelines.",
-      image: "/lovable-uploads/e796548d-135b-4831-897d-5e05858ddba9.png"
+      image: "/lovable-uploads/example-person.jpeg"
     },
     {
       name: "Emily Johnson",
       role: "Customer Experience Director",
       bio: "Emily ensures that every client interaction exceeds expectations, from initial consultation through installation and beyond.",
-      image: "/lovable-uploads/e796548d-135b-4831-897d-5e05858ddba9.png"
+      image: "/lovable-uploads/example-person.jpeg"
     }
   ];
 
@@ -64,19 +63,19 @@ const About = () => {
       quote: "The craftsmanship in our new kitchen cabinets is exceptional. Every detail shows care and precision.",
       author: "Jessica & Mark T.",
       location: "Springfield, MO",
-      image: "/lovable-uploads/e796548d-135b-4831-897d-5e05858ddba9.png"
+      image: "/lovable-uploads/example-person.jpeg"
     },
     {
-      quote: "We were amazed at how Fabuwood transformed our outdated kitchen into a modern, functional space while maintaining the character of our historic home.",
+      quote: "We were amazed at how Cabinet Mart transformed our outdated kitchen into a modern, functional space while maintaining the character of our historic home.",
       author: "David Wilson",
       location: "Columbia, MO",
-      image: "/lovable-uploads/e796548d-135b-4831-897d-5e05858ddba9.png"
+      image: "/lovable-uploads/example-person.jpeg"
     },
     {
-      quote: "From design to installation, working with Fabuwood was a seamless experience. Their attention to detail is unmatched.",
+      quote: "From design to installation, working with Cabinet Mart was a seamless experience. Their attention to detail is unmatched.",
       author: "Linda & Robert K.",
       location: "Kansas City, MO",
-      image: "/lovable-uploads/e796548d-135b-4831-897d-5e05858ddba9.png"
+      image: "/lovable-uploads/example-person.jpeg"
     }
   ];
 
@@ -89,7 +88,7 @@ const About = () => {
         <div className="container px-4 md:px-6">
           <h1 className="text-4xl md:text-5xl font-serif font-medium mb-4">Our Story</h1>
           <p className="text-muted-foreground text-lg max-w-2xl">
-            Discover the passion, craftsmanship, and dedication behind Fabuwood's journey to becoming a leading cabinet maker.
+            Discover the passion, craftsmanship, and dedication behind Cabinet Mart's journey to becoming a leading cabinet maker.
           </p>
         </div>
       </div>
@@ -101,7 +100,7 @@ const About = () => {
             <div>
               <h2 className="section-title">Our Mission</h2>
               <p className="text-lg mb-6">
-                At Fabuwood, we're committed to creating handcrafted, solid wood kitchens that blend timeless design with modern functionality. Each piece we create is built to last generations while reflecting the unique personality of its owners.
+                At Cabinet Mart, we're committed to creating handcrafted, solid wood kitchens that blend timeless design with modern functionality. Each piece we create is built to last generations while reflecting the unique personality of its owners.
               </p>
               <p className="text-lg mb-6">
                 Our mission is to preserve the art of traditional woodworking while embracing innovative techniques and sustainable practices that reduce our environmental footprint.
@@ -113,7 +112,7 @@ const About = () => {
             <div className="relative">
               <div className="aspect-square overflow-hidden rounded-lg">
                 <img 
-                  src="/lovable-uploads/e796548d-135b-4831-897d-5e05858ddba9.png" 
+                  src="/lovable-uploads/wood-samples.jpg" 
                   alt="Handcrafted wooden cabinet detail" 
                   className="w-full h-full object-cover"
                 />
