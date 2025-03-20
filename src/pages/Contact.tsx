@@ -2,7 +2,6 @@
 import { useEffect } from 'react';
 import NavigationMenu from '@/components/NavigationMenu';
 import Footer from '@/components/Footer';
-import ContactForm from '@/components/ContactForm';
 import ContactInfo from '@/components/ContactInfo';
 import ContactMap from '@/components/ContactMap';
 
@@ -48,11 +47,8 @@ const Contact = () => {
       </div>
       
       <div className="container px-4 md:px-6 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <ContactForm />
-          
-          {/* Contact Information */}
+        {/* Contact Information */}
+        <div className="max-w-3xl mx-auto">
           <ContactInfo />
         </div>
       </div>
