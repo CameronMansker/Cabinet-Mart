@@ -41,7 +41,7 @@ const Index = () => {
       subtitle: "Premium kitchen designs crafted to match your specific style and needs.",
       buttonText: "View Our Work",
       buttonLink: "#gallery",
-      imageSrc: "/lovable-uploads/e796548d-135b-4831-897d-5e05858ddba9.png",
+      imageSrc: "/lovable-uploads/cad.png",
       imageAlt: "Kitchen with wooden cabinets and modern design",
       reverse: false
     },
@@ -51,7 +51,7 @@ const Index = () => {
       subtitle: "Find the perfect door style for your kitchen renovation project.",
       buttonText: "Explore",
       buttonLink: "#door-styles",
-      imageSrc: "/lovable-uploads/e796548d-135b-4831-897d-5e05858ddba9.png",
+      imageSrc: "/lovable-uploads/wood-samples.jpg",
       imageAlt: "Various kitchen cabinet door styles",
       reverse: true
     },
@@ -61,7 +61,7 @@ const Index = () => {
       subtitle: "Maximize your space with intelligent storage solutions and accessories.",
       buttonText: "Learn More",
       buttonLink: "#organization",
-      imageSrc: "/lovable-uploads/e796548d-135b-4831-897d-5e05858ddba9.png",
+      imageSrc: "/lovable-uploads/PM-CNC-InUse-1.jpg",
       imageAlt: "Smart kitchen cabinet organization system",
       reverse: false
     },
@@ -71,7 +71,7 @@ const Index = () => {
       subtitle: "Experience the difference of premium craftsmanship and materials.",
       buttonText: "Our Story",
       buttonLink: "#about",
-      imageSrc: "/lovable-uploads/e796548d-135b-4831-897d-5e05858ddba9.png",
+      imageSrc: "/lovable-uploads/cargo-unloading.jpg",
       imageAlt: "Woodland cabinetry showcase",
       reverse: true
     },
@@ -81,7 +81,7 @@ const Index = () => {
       subtitle: "Custom finishes that make your kitchen distinctively yours.",
       buttonText: "View Options",
       buttonLink: "#finishes",
-      imageSrc: "/lovable-uploads/e796548d-135b-4831-897d-5e05858ddba9.png",
+      imageSrc: "/lovable-uploads/maybe-hero-jpg",
       imageAlt: "Kitchen cabinets with unique finishes",
       reverse: false
     }
