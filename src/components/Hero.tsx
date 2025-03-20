@@ -61,6 +61,13 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      
+      <div className="absolute bottom-0 left-0 right-0 text-center text-white/80 z-10 py-8 text-sm">
+        <p className="text-balance max-w-3xl mx-auto px-4">
+          Cabinet maker with 30+ years of experience in crafting handmade, solid wood kitchens.
+          Focused on quality, craftsmanship, thoughtful design, and an innovative approach.
+        </p>
+      </div>
     </section>
   );
 };

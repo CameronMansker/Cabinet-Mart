@@ -2,7 +2,6 @@
 import { useEffect } from 'react';
 import NavigationMenu from '@/components/NavigationMenu';
 import Hero from '@/components/Hero';
-import IntroSection from '@/components/IntroSection';
 import FeatureSection from '@/components/FeatureSection';
 import QualityIndicators from '@/components/QualityIndicators';
 import Footer from '@/components/Footer';
@@ -38,50 +37,50 @@ const Index = () => {
     {
       id: "vision",
       title: "Your Vision + Our Expertise",
-      subtitle: "Get great tools and advice here.",
-      buttonText: "Plan Your Dream",
+      subtitle: "Premium kitchen designs crafted to match your specific style and needs.",
+      buttonText: "View Our Work",
       buttonLink: "#gallery",
-      imageSrc: "/lovable-uploads/ae19e0c4-0c82-4aa7-a5f6-8966f31df53f.png",
+      imageSrc: "/lovable-uploads/e796548d-135b-4831-897d-5e05858ddba9.png",
       imageAlt: "Kitchen with wooden cabinets and modern design",
       reverse: false
     },
     {
       id: "door-styles",
       title: "Browse Door Styles",
-      subtitle: "Visualize door styles & finishes.",
-      buttonText: "View Styles",
+      subtitle: "Find the perfect door style for your kitchen renovation project.",
+      buttonText: "Explore",
       buttonLink: "#door-styles",
-      imageSrc: "/lovable-uploads/ae19e0c4-0c82-4aa7-a5f6-8966f31df53f.png",
+      imageSrc: "/lovable-uploads/e796548d-135b-4831-897d-5e05858ddba9.png",
       imageAlt: "Various kitchen cabinet door styles",
       reverse: true
     },
     {
       id: "organization",
       title: "Smart Organization",
-      subtitle: "Organize your life — Your way.",
-      buttonText: "Get Organized",
+      subtitle: "Maximize your space with intelligent storage solutions and accessories.",
+      buttonText: "Learn More",
       buttonLink: "#organization",
-      imageSrc: "/lovable-uploads/ae19e0c4-0c82-4aa7-a5f6-8966f31df53f.png",
+      imageSrc: "/lovable-uploads/e796548d-135b-4831-897d-5e05858ddba9.png",
       imageAlt: "Smart kitchen cabinet organization system",
       reverse: false
     },
     {
       id: "cabinetry",
       title: "Why Woodland Cabinetry",
-      subtitle: "Find out about our legacy of quality.",
-      buttonText: "See Why",
+      subtitle: "Experience the difference of premium craftsmanship and materials.",
+      buttonText: "Our Story",
       buttonLink: "#about",
-      imageSrc: "/lovable-uploads/ae19e0c4-0c82-4aa7-a5f6-8966f31df53f.png",
+      imageSrc: "/lovable-uploads/e796548d-135b-4831-897d-5e05858ddba9.png",
       imageAlt: "Woodland cabinetry showcase",
       reverse: true
     },
     {
       id: "finishes",
       title: "Unique Finishes",
-      subtitle: "View our extensive collection of finishes.",
-      buttonText: "View Finishes",
+      subtitle: "Custom finishes that make your kitchen distinctively yours.",
+      buttonText: "View Options",
       buttonLink: "#finishes",
-      imageSrc: "/lovable-uploads/ae19e0c4-0c82-4aa7-a5f6-8966f31df53f.png",
+      imageSrc: "/lovable-uploads/e796548d-135b-4831-897d-5e05858ddba9.png",
       imageAlt: "Kitchen cabinets with unique finishes",
       reverse: false
     }
@@ -91,7 +90,6 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <NavigationMenu />
       <Hero />
-      <IntroSection />
       
       {featureSections.map((section, index) => (
         <FeatureSection
