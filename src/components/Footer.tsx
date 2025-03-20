@@ -59,15 +59,6 @@ const Footer = () => {
             </div>
           ))}
         </div>
-        
-        <div className="border-t border-gray-200 pt-8 mt-8">
-          <div className="flex flex-wrap gap-4 justify-center mb-8">
-            {brandLogos.map((logo, index) => (
-              <div key={index} className="w-12 h-12 rounded-full bg-white p-2 flex items-center justify-center">
-                <span className="w-6 h-6 bg-gray-200 rounded-full"></span>
-              </div>
-            ))}
-          </div>
           
           <div className="text-center text-sm text-muted-foreground">
             <p className="mb-2">© {currentYear} Cabinet Mart. All rights reserved.</p>
@@ -77,7 +68,6 @@ const Footer = () => {
               <a href="#cookies" className="hover:text-copper mx-2 transition-colors duration-200">Cookies</a>
             </p>
           </div>
-        </div>
       </div>
     </footer>
   );
