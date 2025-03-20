@@ -1,6 +1,7 @@
 
 import { useEffect, useState, useRef } from 'react';
 import { cn } from "@/lib/utils";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 interface FeatureSectionProps {
   title: string;
@@ -54,42 +55,80 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({
     <section 
       ref={sectionRef}
       id={id}
-      className={cn(
-        "py-16 md:py-24 overflow-hidden",
-        reverse ? "bg-secondary" : "bg-white"
-      )}
+      className="py-0 overflow-hidden"
     >
-      <div className="container px-4 md:px-6">
-        <div className={cn(
-          "grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center",
-        )}>
-          <div 
-            className={cn(
-              "transition-all duration-700 delay-200",
-              isVisible ? "opacity-100" : "opacity-0",
-              reverse ? "md:order-last" : "md:order-first"
-            )}
-          >
-            <h2 className="section-title">{title}</h2>
-            <p className="section-subtitle">{subtitle}</p>
-            <a href={buttonLink} className="copper-btn">{buttonText}</a>
-          </div>
-          
-          <div 
-            className={cn(
-              "image-container transition-all duration-700",
-              isVisible ? "opacity-100" : "opacity-0",
-              reverse ? "md:order-first" : "md:order-last"
-            )}
-          >
-            <img 
-              src={imageSrc} 
-              alt={imageAlt} 
-              className="w-full h-auto object-cover rounded-sm"
-              loading="lazy"
-            />
-          </div>
-        </div>
+      <div className="flex flex-col md:flex-row w-full">
+        {!reverse ? (
+          <>
+            {/* Image on left for odd sections */}
+            <div className="w-full md:w-1/2">
+              <div 
+                className={cn(
+                  "transition-all duration-700",
+                  isVisible ? "opacity-100" : "opacity-0"
+                )}
+              >
+                <AspectRatio ratio={1/1} className="h-full">
+                  <img 
+                    src={imageSrc} 
+                    alt={imageAlt} 
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </AspectRatio>
+              </div>
+            </div>
+            
+            {/* Content on right for odd sections */}
+            <div className="w-full md:w-1/2 flex items-center">
+              <div 
+                className={cn(
+                  "p-8 md:p-16 transition-all duration-700 delay-200",
+                  isVisible ? "opacity-100" : "opacity-0"
+                )}
+              >
+                <h2 className="section-title">{title}</h2>
+                <p className="section-subtitle">{subtitle}</p>
+                <a href={buttonLink} className="copper-btn">{buttonText}</a>
+              </div>
+            </div>
+          </>
+        ) : (
+          <>
+            {/* Content on left for even sections */}
+            <div className="w-full md:w-1/2 flex items-center">
+              <div 
+                className={cn(
+                  "p-8 md:p-16 transition-all duration-700 delay-200",
+                  isVisible ? "opacity-100" : "opacity-0"
+                )}
+              >
+                <h2 className="section-title">{title}</h2>
+                <p className="section-subtitle">{subtitle}</p>
+                <a href={buttonLink} className="copper-btn">{buttonText}</a>
+              </div>
+            </div>
+            
+            {/* Image on right for even sections */}
+            <div className="w-full md:w-1/2">
+              <div 
+                className={cn(
+                  "transition-all duration-700",
+                  isVisible ? "opacity-100" : "opacity-0"
+                )}
+              >
+                <AspectRatio ratio={1/1} className="h-full">
+                  <img 
+                    src={imageSrc} 
+                    alt={imageAlt} 
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </AspectRatio>
+              </div>
+            </div>
+          </>
+        )}
       </div>
     </section>
   );
