@@ -58,11 +58,11 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({
       className="py-0 overflow-hidden"
     >
       {/* Desktop layout (md and up) */}
-      <div className="hidden md:flex md:flex-row w-full">
+      <div className="hidden md:flex md:flex-row w-full max-h-[500px]">
         {!reverse ? (
           <>
             {/* Image on left for odd sections */}
-            <div className="w-1/2">
+            <div className="w-1/2 max-h-[500px]">
               <div 
                 className={cn(
                   "transition-all duration-700",
@@ -111,7 +111,7 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({
             </div>
             
             {/* Image on right for even sections */}
-            <div className="w-1/2">
+            <div className="w-1/2 max-h-[500px]">
               <div 
                 className={cn(
                   "transition-all duration-700",
@@ -135,7 +135,7 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({
       {/* Mobile layout (stacked vertically) */}
       <div className="flex flex-col w-full md:hidden">
         {/* Image always appears at top in mobile view */}
-        <div className="w-full">
+        <div className="w-full max-h-[300px]">
           <div 
             className={cn(
               "transition-all duration-700",
