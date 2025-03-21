@@ -5,31 +5,19 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   const footerLinks = [
+
     {
-      title: "CATALOG",
-      links: [
-        { text: "Decorative Columns", href: "/catalog/decorative-columns" },
-        { text: "Ornaments", href: "/catalog/ornaments" },
-        { text: "Custom Cabinets", href: "/catalog/custom-cabinets" },
-        { text: "Mouldings", href: "/catalog/mouldings" },
-        { text: "Decorative Panels", href: "/catalog/decorative-panels" },
-        { text: "Butcher Block Tops", href: "/catalog/butcher-block-tops" },
-        { text: "Corbels", href: "/catalog/corbels" },
-        { text: "Fillers & Panels", href: "/catalog/fillers-panels" }
-      ]
-    },
-    {
-      title: "COMPANY",
+      title: "NAVIGATION",
       links: [
         { text: "About Us", href: "/about" },
-        { text: "Our Story", href: "/about#story" },
+        { text: "Contact us", href: "/contact" },
+        { text: "Decorative Columns", href: "/catalog" },
       ]
     },
     {
       title: "SUPPORT",
       links: [
         { text: "FAQs", href: "/faq" },
-        { text: "Contact Us", href: "/contact" },
         { text: "Warranty", href: "/warranty" },
         { text: "Shipping Policy", href: "/shipping" },
         { text: "Returns Policy", href: "/returns" },
