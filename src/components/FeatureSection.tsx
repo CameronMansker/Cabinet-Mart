@@ -69,7 +69,7 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({
                   isVisible ? "opacity-100" : "opacity-0"
                 )}
               >
-                <AspectRatio ratio={1/1} className="h-full">
+                <AspectRatio ratio={1/1} className="h-full max-h-[500px]">
                   <img 
                     src={imageSrc} 
                     alt={imageAlt} 
@@ -118,7 +118,7 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({
                   isVisible ? "opacity-100" : "opacity-0"
                 )}
               >
-                <AspectRatio ratio={1/1} className="h-full">
+                <AspectRatio ratio={1/1} className="h-full max-h-[500px]">
                   <img 
                     src={imageSrc} 
                     alt={imageAlt} 
@@ -142,7 +142,7 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({
               isVisible ? "opacity-100" : "opacity-0"
             )}
           >
-            <AspectRatio ratio={1/1} className="h-full">
+            <AspectRatio ratio={1/1} className="h-full max-h-[300px]">
               <img 
                 src={imageSrc} 
                 alt={imageAlt} 
