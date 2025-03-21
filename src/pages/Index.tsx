@@ -81,7 +81,7 @@ const Index = () => {
       subtitle: "Custom finishes that make your kitchen distinctively yours.",
       buttonText: "View Options",
       buttonLink: "#finishes",
-      imageSrc: "/lovable-uploads/maybe-hero-jpg",
+      imageSrc: "/lovable-uploads/maybe-hero.jpg",
       imageAlt: "Kitchen cabinets with unique finishes",
       reverse: false
     }
