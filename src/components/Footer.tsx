@@ -11,7 +11,7 @@ const Footer = () => {
       links: [
         { text: "About Us", href: "/about" },
         { text: "Contact us", href: "/contact" },
-        { text: "Decorative Columns", href: "/catalog" },
+        { text: "Catalog", href: "/catalog" },
       ]
     },
     {
