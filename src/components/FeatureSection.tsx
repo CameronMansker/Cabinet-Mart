@@ -57,19 +57,19 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({
       id={id}
       className="py-0 overflow-hidden"
     >
-      {/* Desktop layout (md and up) */}
-      <div className="hidden md:flex md:flex-row w-full">
+      {/* Desktop layout (md and up) - More compact height */}
+      <div className="hidden md:flex md:flex-row w-full max-h-[500px]">
         {!reverse ? (
           <>
             {/* Image on left for odd sections */}
-            <div className="w-1/2">
+            <div className="w-1/2 h-[500px]">
               <div 
                 className={cn(
-                  "transition-all duration-700",
+                  "h-full transition-all duration-700",
                   isVisible ? "opacity-100" : "opacity-0"
                 )}
               >
-                <AspectRatio ratio={1/1} className="h-full">
+                <AspectRatio ratio={16/9} className="h-full">
                   <img 
                     src={imageSrc} 
                     alt={imageAlt} 
@@ -84,7 +84,7 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({
             <div className="w-1/2 flex items-center">
               <div 
                 className={cn(
-                  "p-16 transition-all duration-700 delay-200",
+                  "p-10 transition-all duration-700 delay-200",
                   isVisible ? "opacity-100" : "opacity-0"
                 )}
               >
@@ -100,7 +100,7 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({
             <div className="w-1/2 flex items-center">
               <div 
                 className={cn(
-                  "p-16 transition-all duration-700 delay-200",
+                  "p-10 transition-all duration-700 delay-200",
                   isVisible ? "opacity-100" : "opacity-0"
                 )}
               >
@@ -111,14 +111,14 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({
             </div>
             
             {/* Image on right for even sections */}
-            <div className="w-1/2">
+            <div className="w-1/2 h-[500px]">
               <div 
                 className={cn(
-                  "transition-all duration-700",
+                  "h-full transition-all duration-700",
                   isVisible ? "opacity-100" : "opacity-0"
                 )}
               >
-                <AspectRatio ratio={1/1} className="h-full">
+                <AspectRatio ratio={16/9} className="h-full">
                   <img 
                     src={imageSrc} 
                     alt={imageAlt} 
@@ -132,17 +132,17 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({
         )}
       </div>
 
-      {/* Mobile layout (stacked vertically) */}
+      {/* Mobile layout (stacked vertically) - More compact */}
       <div className="flex flex-col w-full md:hidden">
         {/* Image always appears at top in mobile view */}
-        <div className="w-full">
+        <div className="w-full max-h-[300px]">
           <div 
             className={cn(
               "transition-all duration-700",
               isVisible ? "opacity-100" : "opacity-0"
             )}
           >
-            <AspectRatio ratio={1/1} className="h-full">
+            <AspectRatio ratio={16/9} className="h-full">
               <img 
                 src={imageSrc} 
                 alt={imageAlt} 
@@ -157,7 +157,7 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({
         <div className="w-full">
           <div 
             className={cn(
-              "p-8 transition-all duration-700 delay-200",
+              "p-6 transition-all duration-700 delay-200",
               isVisible ? "opacity-100" : "opacity-0"
             )}
           >
