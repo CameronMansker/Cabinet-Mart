@@ -9,7 +9,7 @@ const Footer = () => {
     {
       title: "NAVIGATION",
       links: [
-        { text: "Home", href: "/index" },
+        { text: "Home", href: "/" },
         { text: "About Us", href: "/about" },
         { text: "Contact us", href: "/contact" },
         { text: "Catalog", href: "/catalog" },
