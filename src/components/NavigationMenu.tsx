@@ -35,7 +35,7 @@ const NavigationMenu = () => {
         </div>
         
         <nav className="hidden md:flex items-center space-x-8">
-          <Link to="/index" className="nav-link">HOME</Link>
+          <Link to="/" className="nav-link">HOME</Link>
           <Link to="/catalog" className="nav-link">CATALOG</Link>
           <Link to="/about" className="nav-link">ABOUT</Link>
           <Link to="/contact" className="nav-link">CONTACT</Link>
