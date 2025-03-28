@@ -1,39 +1,31 @@
-
 import { useEffect } from 'react';
 import NavigationMenu from '@/components/NavigationMenu';
 import Footer from '@/components/Footer';
 import ContactInfo from '@/components/ContactInfo';
 import ContactMap from '@/components/ContactMap';
-
 const Contact = () => {
   useEffect(() => {
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        
         const href = this.getAttribute('href');
         if (!href) return;
-        
         const targetElement = document.querySelector(href);
         if (!targetElement) return;
-        
         window.scrollTo({
           top: targetElement.getBoundingClientRect().top + window.scrollY - 100,
           behavior: 'smooth'
         });
       });
     });
-    
     return () => {
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.removeEventListener('click', () => {});
       });
     };
   }, []);
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <NavigationMenu />
       
       {/* Page Header */}
@@ -56,7 +48,7 @@ const Contact = () => {
       {/* Map Section */}
       <div className="bg-secondary py-16">
         <div className="container px-4 md:px-6">
-          <h2 className="text-3xl font-serif font-medium mb-8 text-center">Visit Our Showroom</h2>
+          
           <div className="rounded-lg overflow-hidden shadow-lg">
             <ContactMap />
           </div>
@@ -64,8 +56,6 @@ const Contact = () => {
       </div>
       
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Contact;
