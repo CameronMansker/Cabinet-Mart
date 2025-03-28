@@ -1,9 +1,6 @@
-
 import { Mail, Phone, MapPin, Clock, Facebook } from 'lucide-react';
-
 const ContactInfo = () => {
-  return (
-    <div>
+  return <div>
       <h2 className="text-2xl md:text-3xl font-serif font-medium mb-6">Business Information</h2>
       
       <div className="space-y-6">
@@ -52,7 +49,7 @@ const ContactInfo = () => {
           <div>
             <h3 className="font-medium text-lg">Business Hours</h3>
             <p className="text-muted-foreground">
-              <span className="block">Monday - Friday: 9:00 AM - 6:00 PM</span>
+              <span className="block">Monday - Friday: 8:00 AM - 4:30 PM</span>
               <span className="block">Saturday: 10:00 AM - 4:00 PM</span>
               <span className="block">Sunday: Closed</span>
             </p>
@@ -68,8 +65,6 @@ const ContactInfo = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default ContactInfo;
