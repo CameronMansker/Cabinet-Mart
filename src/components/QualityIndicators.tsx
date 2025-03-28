@@ -83,7 +83,7 @@ const QualityIndicators = () => {
                 />
               </div>
               <div className="text-center">
-                <div className="feature-number">{point.id}</div>
+                <div className="feature-number w-8 h-0.5 bg-copper mx-auto mb-2"></div>
                 <h3 className="font-serif text-lg">{point.title}</h3>
                 {point.subtitle && <p className="text-sm text-muted-foreground">{point.subtitle}</p>}
               </div>

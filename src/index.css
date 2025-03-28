@@ -86,6 +86,6 @@
   }
   
   .feature-number {
-    @apply font-serif text-2xl text-copper inline-block mb-2;
+    @apply w-8 h-0.5 bg-copper mx-auto mb-2;
   }
 }
