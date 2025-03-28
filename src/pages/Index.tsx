@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import NavigationMenu from '@/components/NavigationMenu';
 import Hero from '@/components/Hero';
@@ -46,26 +45,6 @@ const Index = () => {
       reverse: false
     },
     {
-      id: "door-styles",
-      title: "Browse Door Styles",
-      subtitle: "Find the perfect door style for your kitchen renovation project.",
-      buttonText: "Explore",
-      buttonLink: "#door-styles",
-      imageSrc: "/lovable-uploads/wood-samples.jpg",
-      imageAlt: "Various kitchen cabinet door styles",
-      reverse: true
-    },
-    {
-      id: "organization",
-      title: "Smart Organization",
-      subtitle: "Maximize your space with intelligent storage solutions and accessories.",
-      buttonText: "Learn More",
-      buttonLink: "#organization",
-      imageSrc: "/lovable-uploads/PM-CNC-InUse-1.jpg",
-      imageAlt: "Smart kitchen cabinet organization system",
-      reverse: false
-    },
-    {
       id: "cabinetry",
       title: "Why Woodland Cabinetry",
       subtitle: "Experience the difference of premium craftsmanship and materials.",
@@ -74,16 +53,6 @@ const Index = () => {
       imageSrc: "/lovable-uploads/cargo-unloading.jpg",
       imageAlt: "Woodland cabinetry showcase",
       reverse: true
-    },
-    {
-      id: "finishes",
-      title: "Unique Finishes",
-      subtitle: "Custom finishes that make your kitchen distinctively yours.",
-      buttonText: "View Options",
-      buttonLink: "#finishes",
-      imageSrc: "/lovable-uploads/maybe-hero.jpg",
-      imageAlt: "Kitchen cabinets with unique finishes",
-      reverse: false
     }
   ];
 
