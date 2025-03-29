@@ -10,6 +10,11 @@ if (!defined('_S_VERSION')) {
 }
 
 /**
+ * Include required files
+ */
+require get_template_directory() . '/inc/menu-walkers.php';
+
+/**
  * Enqueue scripts and styles.
  */
 function cabinetmart_scripts() {
