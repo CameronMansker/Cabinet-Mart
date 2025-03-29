@@ -1,110 +1,65 @@
 
 <?php
 /**
- * Cabinet Mart functions and definitions
+ * Cabinet Mart Theme Functions
  */
 
-if (!defined('_S_VERSION')) {
-    // Replace the version number as needed
-    define('_S_VERSION', '1.0.0');
-}
-
-/**
- * Include required files
- */
-require get_template_directory() . '/inc/menu-walkers.php';
-
-/**
- * Enqueue scripts and styles.
- */
-function cabinetmart_scripts() {
-    // Enqueue main stylesheet
-    wp_enqueue_style('cabinetmart-style', get_stylesheet_uri(), array(), _S_VERSION);
-    
-    // Enqueue Tailwind CSS
-    wp_enqueue_style('cabinetmart-tailwind', get_template_directory_uri() . '/assets/css/tailwind.css', array(), _S_VERSION);
-    
-    // Enqueue custom scripts
-    wp_enqueue_script('cabinetmart-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), _S_VERSION, true);
-    
-    // Add Google Fonts
-    wp_enqueue_style('cabinetmart-fonts', 'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap', array(), null);
-}
-add_action('wp_enqueue_scripts', 'cabinetmart_scripts');
-
-/**
- * Register menu locations
- */
-function cabinetmart_register_menus() {
-    register_nav_menus(
-        array(
-            'primary' => __('Primary Menu', 'cabinetmart'),
-            'footer-1' => __('Footer Navigation Menu', 'cabinetmart'),
-            'footer-2' => __('Footer Support Menu', 'cabinetmart'),
-        )
-    );
-}
-add_action('init', 'cabinetmart_register_menus');
-
-/**
- * Register widget areas
- */
-function cabinetmart_widgets_init() {
-    register_sidebar(
-        array(
-            'name'          => __('Footer Contact Info', 'cabinetmart'),
-            'id'            => 'footer-contact',
-            'description'   => __('Add contact information widgets here.', 'cabinetmart'),
-            'before_widget' => '<div class="footer-widget">',
-            'after_widget'  => '</div>',
-            'before_title'  => '<h3 class="text-sm font-medium mb-4 tracking-wider">',
-            'after_title'   => '</h3>',
-        )
-    );
-}
-add_action('widgets_init', 'cabinetmart_widgets_init');
-
-/**
- * Add theme support features
- */
+// Theme setup
 function cabinetmart_setup() {
-    // Add default posts and comments RSS feed links to head
-    add_theme_support('automatic-feed-links');
-
-    // Let WordPress manage the document title
+    // Add theme support
     add_theme_support('title-tag');
-
-    // Enable support for Post Thumbnails on posts and pages
     add_theme_support('post-thumbnails');
-
-    // Add support for custom logo
-    add_theme_support(
-        'custom-logo',
-        array(
-            'height'      => 250,
-            'width'       => 250,
-            'flex-width'  => true,
-            'flex-height' => true,
-        )
-    );
-
-    // HTML5 support
-    add_theme_support(
-        'html5',
-        array(
-            'search-form',
-            'comment-form',
-            'comment-list',
-            'gallery',
-            'caption',
-            'style',
-            'script',
-        )
-    );
+    add_theme_support('custom-logo');
+    add_theme_support('html5', array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption'));
+    
+    // Register menus
+    register_nav_menus(array(
+        'primary' => __('Primary Menu', 'cabinetmart'),
+        'footer_nav' => __('Footer Navigation', 'cabinetmart'),
+        'footer_support' => __('Footer Support', 'cabinetmart'),
+    ));
 }
 add_action('after_setup_theme', 'cabinetmart_setup');
 
-// Include ACF fields if plugin exists
-if (class_exists('ACF')) {
-    require get_template_directory() . '/inc/acf-fields.php';
+// Enqueue styles and scripts
+function cabinetmart_scripts() {
+    // Enqueue main stylesheet
+    wp_enqueue_style('cabinetmart-style', get_stylesheet_uri(), array(), '1.0.0');
+    
+    // Add custom fonts
+    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap', array(), null);
+    
+    // Enqueue main JS file
+    wp_enqueue_script('cabinetmart-main', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0.0', true);
+    
+    // Add Tailwind output
+    wp_enqueue_style('cabinetmart-tailwind', get_template_directory_uri() . '/assets/css/tailwind.css', array(), '1.0.0');
 }
+add_action('wp_enqueue_scripts', 'cabinetmart_scripts');
+
+// ACF Options Page
+if (function_exists('acf_add_options_page')) {
+    acf_add_options_page(array(
+        'page_title' => 'Theme Settings',
+        'menu_title' => 'Theme Settings',
+        'menu_slug' => 'theme-settings',
+        'capability' => 'edit_posts',
+        'redirect' => false
+    ));
+    
+    acf_add_options_sub_page(array(
+        'page_title' => 'Header Settings',
+        'menu_title' => 'Header',
+        'parent_slug' => 'theme-settings',
+    ));
+    
+    acf_add_options_sub_page(array(
+        'page_title' => 'Footer Settings',
+        'menu_title' => 'Footer',
+        'parent_slug' => 'theme-settings',
+    ));
+}
+
+// Include ACF field definitions
+require_once get_template_directory() . '/inc/acf-fields.php';
+?>
