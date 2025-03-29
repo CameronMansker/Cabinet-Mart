@@ -1,6 +1,7 @@
 
 import { useEffect } from 'react';
-import PolicyLayout from '@/components/PolicyLayout';
+import PolicyLayout from '../components/PolicyLayout';
+import React from 'react';
 
 const PrivacyPolicy = () => {
   useEffect(() => {
