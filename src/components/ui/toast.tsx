@@ -1,4 +1,3 @@
-
 import * as React from "react"
 import * as ToastPrimitives from "@radix-ui/react-toast"
 import { cva, type VariantProps } from "class-variance-authority"
@@ -125,13 +124,4 @@ export {
   ToastDescription,
   ToastClose,
   ToastAction,
-}
-
-// Export a Toaster component for direct import
-export function Toaster() {
-  return (
-    <ToastProvider>
-      <ToastViewport />
-    </ToastProvider>
-  )
 }

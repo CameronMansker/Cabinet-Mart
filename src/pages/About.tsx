@@ -1,10 +1,8 @@
-
 import { useEffect } from 'react';
-import NavigationMenu from '../components/NavigationMenu';
-import Footer from '../components/Footer';
-import Testimonial from '../components/Testimonial';
-import React from 'react';
-
+import NavigationMenu from '@/components/NavigationMenu';
+import Footer from '@/components/Footer';
+import TeamMember from '@/components/TeamMember';
+import Testimonial from '@/components/Testimonial';
 const About = () => {
   useEffect(() => {
     // Smooth scroll for anchor links
@@ -27,57 +25,44 @@ const About = () => {
       });
     };
   }, []);
-  
-  const teamMembers = [
-    {
-      name: "Robert Wood",
-      role: "Founder & Master Craftsman",
-      bio: "With over 30 years of experience in woodworking, Robert founded Cabinet Mart with a vision to create timeless, handcrafted cabinetry that transforms spaces into works of art.",
-      image: "/lovable-uploads/example-person.jpeg"
-    }, 
-    {
-      name: "Sarah Chen",
-      role: "Lead Designer",
-      bio: "Sarah brings 15 years of interior design expertise to our team, helping clients reimagine their spaces with functional yet elegant cabinet solutions.",
-      image: "/lovable-uploads/example-person.jpeg"
-    }, 
-    {
-      name: "Michael Torres",
-      role: "Production Manager",
-      bio: "Michael oversees our workshop operations, ensuring each piece meets our rigorous quality standards while maintaining efficient production timelines.",
-      image: "/lovable-uploads/example-person.jpeg"
-    }, 
-    {
-      name: "Emily Johnson",
-      role: "Customer Experience Director",
-      bio: "Emily ensures that every client interaction exceeds expectations, from initial consultation through installation and beyond.",
-      image: "/lovable-uploads/example-person.jpeg"
-    }
-  ];
-  
-  const testimonials = [
-    {
-      quote: "The craftsmanship in our new kitchen cabinets is exceptional. Every detail shows care and precision.",
-      author: "Jessica & Mark T.",
-      location: "Springfield, MO",
-      image: "/lovable-uploads/example-person.jpeg"
-    }, 
-    {
-      quote: "We were amazed at how Cabinet Mart transformed our outdated kitchen into a modern, functional space while maintaining the character of our historic home.",
-      author: "David Wilson",
-      location: "Columbia, MO",
-      image: "/lovable-uploads/example-person.jpeg"
-    }, 
-    {
-      quote: "From design to installation, working with Cabinet Mart was a seamless experience. Their attention to detail is unmatched.",
-      author: "Linda & Robert K.",
-      location: "Kansas City, MO",
-      image: "/lovable-uploads/example-person.jpeg"
-    }
-  ];
-  
-  return (
-    <div className="min-h-screen bg-background">
+  const teamMembers = [{
+    name: "Robert Wood",
+    role: "Founder & Master Craftsman",
+    bio: "With over 30 years of experience in woodworking, Robert founded Cabinet Mart with a vision to create timeless, handcrafted cabinetry that transforms spaces into works of art.",
+    image: "/lovable-uploads/example-person.jpeg"
+  }, {
+    name: "Sarah Chen",
+    role: "Lead Designer",
+    bio: "Sarah brings 15 years of interior design expertise to our team, helping clients reimagine their spaces with functional yet elegant cabinet solutions.",
+    image: "/lovable-uploads/example-person.jpeg"
+  }, {
+    name: "Michael Torres",
+    role: "Production Manager",
+    bio: "Michael oversees our workshop operations, ensuring each piece meets our rigorous quality standards while maintaining efficient production timelines.",
+    image: "/lovable-uploads/example-person.jpeg"
+  }, {
+    name: "Emily Johnson",
+    role: "Customer Experience Director",
+    bio: "Emily ensures that every client interaction exceeds expectations, from initial consultation through installation and beyond.",
+    image: "/lovable-uploads/example-person.jpeg"
+  }];
+  const testimonials = [{
+    quote: "The craftsmanship in our new kitchen cabinets is exceptional. Every detail shows care and precision.",
+    author: "Jessica & Mark T.",
+    location: "Springfield, MO",
+    image: "/lovable-uploads/example-person.jpeg"
+  }, {
+    quote: "We were amazed at how Cabinet Mart transformed our outdated kitchen into a modern, functional space while maintaining the character of our historic home.",
+    author: "David Wilson",
+    location: "Columbia, MO",
+    image: "/lovable-uploads/example-person.jpeg"
+  }, {
+    quote: "From design to installation, working with Cabinet Mart was a seamless experience. Their attention to detail is unmatched.",
+    author: "Linda & Robert K.",
+    location: "Kansas City, MO",
+    image: "/lovable-uploads/example-person.jpeg"
+  }];
+  return <div className="min-h-screen bg-background">
       <NavigationMenu />
       
       {/* Page Header */}
@@ -118,20 +103,15 @@ const About = () => {
         </div>
       </section>
       
+      {/* Team Section */}
+      
+      
       {/* Testimonials Section */}
       <section className="py-16 md:py-24">
         <div className="container px-4 md:px-6">
           <h2 className="section-title text-center mb-16">What Our Clients Say</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Testimonial 
-                key={index} 
-                quote={testimonial.quote} 
-                author={testimonial.author} 
-                location={testimonial.location} 
-                image={testimonial.image} 
-              />
-            ))}
+            {testimonials.map((testimonial, index) => <Testimonial key={index} quote={testimonial.quote} author={testimonial.author} location={testimonial.location} image={testimonial.image} />)}
           </div>
         </div>
       </section>
@@ -150,8 +130,6 @@ const About = () => {
       </section>
       
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default About;
