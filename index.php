@@ -29,8 +29,8 @@ get_header();
                 ?>
                 <article id="post-<?php the_ID(); ?>" <?php post_class('bg-white p-6 rounded-lg shadow-sm border border-gray-200'); ?>>
                     <?php if (has_post_thumbnail()) : ?>
-                    <div class="mb-4 rounded-md overflow-hidden">
-                        <?php the_post_thumbnail('large', ['class' => 'w-full h-auto']); ?>
+                    <div class="mb-6 rounded-md overflow-hidden">
+                        <?php the_post_thumbnail('large', ['class' => 'w-full h-auto aspect-video object-cover']); ?>
                     </div>
                     <?php endif; ?>
                     
@@ -51,7 +51,7 @@ get_header();
                         <?php the_excerpt(); ?>
                     </div>
                     
-                    <footer class="entry-footer mt-4">
+                    <footer class="entry-footer mt-6">
                         <a href="<?php echo esc_url(get_permalink()); ?>" class="text-copper hover:underline transition-colors duration-300">
                             <?php esc_html_e('Read more', 'cabinet-mart'); ?> &rarr;
                         </a>
@@ -62,12 +62,14 @@ get_header();
             
             echo '</div>';
             
+            echo '<div class="mt-16">';
             the_posts_pagination(array(
                 'mid_size' => 2,
                 'prev_text' => __('&larr; Previous', 'cabinet-mart'),
                 'next_text' => __('Next &rarr;', 'cabinet-mart'),
-                'class' => 'mt-12 flex justify-center',
+                'class' => 'flex justify-center',
             ));
+            echo '</div>';
             
         else :
             ?>

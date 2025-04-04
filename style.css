@@ -12,9 +12,10 @@ Text Domain: cabinet-mart
 Tags: custom-menu, custom-logo, featured-images, footer-widgets, theme-options
 */
 
-/* Import the Tailwind styles */
+/* Import the fonts */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap');
 
+/* Base styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -65,15 +66,43 @@ Tags: custom-menu, custom-logo, featured-images, footer-widgets, theme-options
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif tracking-tight;
   }
+
+  /* Add proper spacing to Gutenberg blocks */
+  .wp-block-group {
+    @apply mb-8;
+  }
+  
+  .wp-block-columns {
+    @apply gap-8;
+  }
+
+  .wp-block-image {
+    @apply my-8;
+  }
+  
+  /* Fix alignment issues with WordPress content */
+  .alignfull {
+    @apply w-screen relative left-1/2 right-1/2 -mx-[50vw] max-w-[100vw];
+  }
+
+  .alignwide {
+    @apply w-screen relative left-1/2 right-1/2 -mx-[calc(50vw-50%)] max-w-[calc(100vw-10%)];
+  }
+
+  @screen md {
+    .alignwide {
+      @apply -mx-[calc(35vw-50%)] max-w-[calc(100vw-30%)];
+    }
+  }
 }
 
 @layer components {
   .copper-btn {
-    @apply bg-copper hover:bg-copper-dark text-white px-6 py-2 transition-all duration-300 inline-block;
+    @apply bg-copper hover:bg-copper-dark text-white px-6 py-3 transition-all duration-300 inline-block;
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl font-serif font-medium mb-3;
+    @apply text-3xl md:text-4xl font-serif font-medium mb-6;
   }
   
   .section-subtitle {
@@ -101,5 +130,68 @@ Tags: custom-menu, custom-logo, featured-images, footer-widgets, theme-options
   
   .feature-number {
     @apply w-8 h-0.5 bg-copper mx-auto mb-2;
+  }
+
+  /* WordPress specific styling */
+  .wp-block-button__link {
+    @apply bg-copper hover:bg-copper-dark text-white px-6 py-2 transition-all duration-300;
+  }
+
+  .wp-block-quote {
+    @apply border-l-4 border-copper pl-4 italic;
+  }
+  
+  .wp-block-pullquote {
+    @apply border-y-4 border-copper py-6 my-8;
+  }
+  
+  /* Comments styling */
+  .comment-reply-title {
+    @apply text-xl font-serif font-medium mb-4;
+  }
+  
+  .comment-form label {
+    @apply block mb-2 text-sm;
+  }
+  
+  .comment-form input[type="text"],
+  .comment-form input[type="email"],
+  .comment-form input[type="url"],
+  .comment-form textarea {
+    @apply w-full border border-border rounded-md px-3 py-2;
+  }
+  
+  .comment-form input[type="submit"] {
+    @apply copper-btn mt-4;
+  }
+  
+  /* Pagination styling */
+  .pagination,
+  .page-numbers {
+    @apply flex flex-wrap justify-center gap-2 mt-8;
+  }
+  
+  .page-numbers li {
+    @apply inline-block;
+  }
+  
+  .page-numbers a,
+  .page-numbers span {
+    @apply inline-block px-4 py-2 border border-border rounded-md;
+  }
+  
+  .page-numbers .current {
+    @apply bg-copper text-white border-copper;
+  }
+}
+
+/* Fix WordPress admin bar interference with fixed header */
+.admin-bar #site-header {
+  top: 32px;
+}
+
+@media screen and (max-width: 782px) {
+  .admin-bar #site-header {
+    top: 46px;
   }
 }
