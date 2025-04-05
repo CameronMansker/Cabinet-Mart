@@ -9,7 +9,7 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
-    <!-- FAQ Header -->
+    <!-- Policy Header -->
     <div class="pt-32 pb-8 md:pt-40 md:pb-12 bg-secondary">
         <div class="container px-4 md:px-6">
             <h1 class="text-3xl md:text-4xl font-serif font-medium text-center"><?php the_title(); ?></h1>
