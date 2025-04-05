@@ -1,8 +1,11 @@
+
 import { useEffect } from 'react';
-import NavigationMenu from '@/components/NavigationMenu';
-import Footer from '@/components/Footer';
-import ContactInfo from '@/components/ContactInfo';
-import ContactMap from '@/components/ContactMap';
+import NavigationMenu from '../components/NavigationMenu';
+import Footer from '../components/Footer';
+import ContactInfo from '../components/ContactInfo';
+import ContactMap from '../components/ContactMap';
+import React from 'react';
+
 const Contact = () => {
   useEffect(() => {
     // Smooth scroll for anchor links
@@ -25,7 +28,9 @@ const Contact = () => {
       });
     };
   }, []);
-  return <div className="min-h-screen bg-background">
+  
+  return (
+    <div className="min-h-screen bg-background">
       <NavigationMenu />
       
       {/* Page Header */}
@@ -48,7 +53,6 @@ const Contact = () => {
       {/* Map Section */}
       <div className="bg-secondary py-16">
         <div className="container px-4 md:px-6">
-          
           <div className="rounded-lg overflow-hidden shadow-lg">
             <ContactMap />
           </div>
@@ -56,6 +60,8 @@ const Contact = () => {
       </div>
       
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default Contact;

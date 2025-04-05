@@ -1,7 +1,7 @@
 
 <?php
 /**
- * The template for displaying all pages
+ * Template Name: Policy Page
  */
 get_header();
 ?>
@@ -14,15 +14,12 @@ get_header();
 
 <div class="container px-4 md:px-6 py-16">
     <div class="max-w-3xl mx-auto">
-        <div class="prose prose-lg max-w-none">
-            <?php
-            if (have_posts()) :
-                while (have_posts()) :
-                    the_post();
-                    the_content();
-                endwhile;
-            endif;
-            ?>
+        <div class="bg-white p-8 rounded-lg shadow-sm">
+            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                <div class="prose prose-lg max-w-none">
+                    <?php the_content(); ?>
+                </div>
+            <?php endwhile; endif; ?>
         </div>
     </div>
 </div>

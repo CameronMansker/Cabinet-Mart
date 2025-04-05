@@ -1,36 +1,48 @@
 
 === Cabinet Mart WordPress Theme ===
-Contributors: Your Name
-Tags: custom-menu, custom-logo, featured-images, footer-widgets, theme-options, cabinet, woodworking
-Requires at least: WordPress 5.6
-Tested up to: WordPress 6.5
-Requires PHP: 7.4
-Stable tag: 1.0.0
-License: GNU General Public License v2 or later
-License URI: LICENSE
 
-A premium WordPress theme for Cabinet Mart.
-
-== Description ==
-Cabinet Mart is a sleek, modern theme designed specifically for cabinetry and woodworking businesses. It features a clean design with customizable sections to showcase your products and services.
+This theme is a conversion of a React site to a WordPress theme using Advanced Custom Fields Pro.
 
 == Installation ==
-1. In your admin panel, go to Appearance > Themes and click the Add New button.
-2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
-3. Click Activate to use your new theme right away.
 
-== Frequently Asked Questions ==
-= Does this theme support any plugins? =
-Cabinet Mart works perfectly with Advanced Custom Fields and Contact Form 7.
+1. Upload the theme files to the /wp-content/themes/cabinetmart directory.
+2. Activate the theme through the 'Themes' screen in WordPress.
+3. Install and activate the Advanced Custom Fields Pro plugin.
+4. Use the Theme Settings menu to configure the theme.
 
-= How do I set up the homepage? =
-Create a new page, select the "Home Page" template, then set it as your front page in Settings > Reading.
+== Required Plugins ==
 
-== Changelog ==
-= 1.0.0 =
-* Initial release
+* Advanced Custom Fields Pro - For managing all custom fields and options
 
-== Credits ==
-* Based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
-* Tailwind CSS https://tailwindcss.com/, [MIT](https://opensource.org/licenses/MIT)
-* Google Fonts - Playfair Display, Inter [SIL Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+== ACF Field Groups ==
+
+The theme includes the following ACF field groups:
+* Theme Settings - Global settings for contact info and social media
+* Home Page Settings - For the front page
+* About Page Settings - For the about page
+* Contact Page Settings - For the contact page
+* Catalog Page Settings - For the catalog page
+
+== Page Templates ==
+
+* front-page.php - Homepage template
+* page-about.php - About page template
+* page-contact.php - Contact page template
+* page-catalog.php - Catalog gallery template
+* page-policy.php - Policy pages template (terms, privacy, etc.)
+
+== Notes ==
+
+This theme requires ACF Pro to function properly. The ACF field definitions are included in inc/acf-fields.php.
+
+You may need to set up the following pages:
+* Home
+* About
+* Contact
+* Catalog
+* Policy pages (Terms, Privacy, FAQ, Warranty, etc.)
+
+And create the following menus:
+* Primary Menu
+* Footer Navigation
+* Footer Support

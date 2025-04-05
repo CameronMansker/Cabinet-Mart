@@ -1,94 +1,190 @@
 
-/* 
-* This file will be processed by WordPress to generate the final CSS 
-* You would need to set up PostCSS and Tailwind in your build process
-*/
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/**
+ * This file compiles to the main stylesheet using a build process
+ * For production use, you would run a build tool like PostCSS
+ */
 
-@layer base {
-  :root {
-    --background: 30 25% 98%;
-    --foreground: 20 10% 15%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 20 10% 15%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 20 10% 15%;
-
-    --primary: 20 40% 30%;
-    --primary-foreground: 60 30% 96%;
-
-    --secondary: 30 10% 97%;
-    --secondary-foreground: 20 10% 15%;
-
-    --muted: 30 10% 96%;
-    --muted-foreground: 20 10% 40%;
-
-    --accent: 24 75% 50%;
-    --accent-foreground: 60 30% 96%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 20 5% 90%;
-    --input: 20 5% 90%;
-    --ring: 24 75% 50%;
-
-    --radius: 0.5rem;
-  }
+.font-sans {
+  font-family: 'Inter', sans-serif;
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground font-sans overflow-x-hidden;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-serif tracking-tight;
-  }
+.font-serif {
+  font-family: 'Playfair Display', serif;
 }
 
-@layer components {
-  .copper-btn {
-    @apply bg-copper hover:bg-copper-dark text-white px-6 py-2 transition-all duration-300 inline-block;
-  }
+.bg-background {
+  background-color: hsl(30, 25%, 98%);
+}
 
+.text-foreground {
+  color: hsl(20, 10%, 15%);
+}
+
+.bg-copper {
+  background-color: hsl(24, 75%, 50%);
+}
+
+.text-copper {
+  color: hsl(24, 75%, 50%);
+}
+
+.hover\:bg-copper:hover {
+  background-color: hsl(24, 75%, 50%);
+}
+
+.hover\:text-copper:hover {
+  color: hsl(24, 75%, 50%);
+}
+
+.border-copper {
+  border-color: hsl(24, 75%, 50%);
+}
+
+.hover\:bg-copper-dark:hover {
+  background-color: hsl(24, 75%, 45%);
+}
+
+.bg-secondary {
+  background-color: hsl(30, 10%, 97%);
+}
+
+.text-muted-foreground {
+  color: hsl(20, 10%, 40%);
+}
+
+.bg-muted {
+  background-color: hsl(30, 10%, 96%);
+}
+
+.copper-btn {
+  background-color: hsl(24, 75%, 50%);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.copper-btn:hover {
+  background-color: hsl(24, 75%, 45%);
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+@media (min-width: 768px) {
   .section-title {
-    @apply text-3xl md:text-4xl font-serif font-medium mb-3;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
-  
-  .section-subtitle {
-    @apply text-muted-foreground text-lg mb-6;
-  }
+}
 
-  .nav-link {
-    @apply relative px-2 py-1 text-sm font-medium transition-all duration-300 
-      after:content-[''] after:absolute after:w-0 after:h-[1px] after:bg-copper 
-      after:left-0 after:bottom-0 after:transition-all after:duration-300
-      hover:after:w-full;
-  }
+.section-subtitle {
+  color: hsl(20, 10%, 40%);
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  margin-bottom: 1.5rem;
+}
 
-  .text-balance {
-    text-wrap: balance;
+.nav-link {
+  position: relative;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  background-color: hsl(24, 75%, 50%);
+  left: 0;
+  bottom: 0;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-container img {
+  transition: transform 0.7s ease-out;
+}
+
+.image-container img:hover {
+  transform: scale(1.05);
+}
+
+.feature-number {
+  width: 2rem;
+  height: 0.125rem;
+  background-color: hsl(24, 75%, 50%);
+  margin: 0 auto 0.5rem;
+}
+
+/* Animation for quality points */
+.animate-quality-point {
+  opacity: 0;
+  transform: translateY(2.5rem);
+}
+
+.animate-quality-point.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Utility classes equivalent to Tailwind */
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
   }
-  
-  .image-container {
-    @apply relative overflow-hidden;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
   }
-  
-  .image-container img {
-    @apply transition-transform duration-700 ease-out hover:scale-105;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
   }
-  
-  .feature-number {
-    @apply w-8 h-0.5 bg-copper mx-auto mb-2;
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
   }
 }
