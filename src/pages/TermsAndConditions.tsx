@@ -1,7 +1,6 @@
 
 import { useEffect } from 'react';
-import PolicyLayout from '../components/PolicyLayout';
-import React from 'react';
+import PolicyLayout from '@/components/PolicyLayout';
 
 const TermsAndConditions = () => {
   useEffect(() => {
